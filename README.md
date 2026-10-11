@@ -38,6 +38,12 @@ Deepak K
 
 GitHub: https://github.com/deepak-game-dev
 
+
+## Demo Video
+
+▶️ [Watch Project Eclipse — C++ Gameplay Programming Demo](https://youtu.be/AOSOJIm_rf8)
+
+
 ## Future Improvements
 
 Potential improvements include expanding enemy behavior, refining gameplay interactions, and developing more complex mission scenarios.
