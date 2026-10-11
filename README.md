@@ -43,6 +43,12 @@ GitHub: https://github.com/deepak-game-dev
 
 ▶️ [Watch Project Eclipse — C++ Gameplay Programming Demo](https://youtu.be/AOSOJIm_rf8)
 
+## Portfolio
+
+🌐 **[Visit My Game Development Portfolio](https://deepak-game-dev.github.io/)**
+
+Explore my gameplay programming projects, demonstrations, and development work.
+
 
 ## Future Improvements
 
