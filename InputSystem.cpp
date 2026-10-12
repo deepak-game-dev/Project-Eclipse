@@ -1,42 +1,31 @@
+
 #include "InputSystem.h"
-#include <conio.h>
-InputSystem::InputSystem() : MovementInput(0.0f, 0.0f, 0.0f)
+#include <Windows.h>
+
+InputSystem::InputSystem()
+    : MovementInput(0.0f, 0.0f, 0.0f)
 {
 }
 
 void InputSystem::Update()
 {
-	MovementInput = Vector3(0.0f, 0.0f, 0.0f);
-    while (_kbhit())
-    {
-        char key = _getch();
+    MovementInput = Vector3(0.0f, 0.0f, 0.0f);
 
-        switch (key)
-        {
-        case 'w':
-        case 'W':
-            MovementInput.Z += 1.0f;
-            break;
+    if (GetAsyncKeyState('W') & 0x8000)
+        MovementInput.Z += 1.0f;
 
-        case 's':
-        case 'S':
-            MovementInput.Z -= 1.0f;
-            break;
+    if (GetAsyncKeyState('S') & 0x8000)
+        MovementInput.Z -= 1.0f;
 
-        case 'a':
-        case 'A':
-            MovementInput.X -= 1.0f;
-            break;
+    if (GetAsyncKeyState('A') & 0x8000)
+        MovementInput.X -= 1.0f;
 
-        case 'd':
-        case 'D':
-            MovementInput.X += 1.0f;
-            break;
-        }
-    }
+    if (GetAsyncKeyState('D') & 0x8000)
+        MovementInput.X += 1.0f;
 }
 
 Vector3 InputSystem::GetMovementInput() const
 {
-	return MovementInput;
+    return MovementInput;
 }
+

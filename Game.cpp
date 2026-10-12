@@ -1,10 +1,10 @@
 #include "Game.h"
-
+#include <iostream>
 Game::Game()
 {
     player = entityManager.CreatePlayer();
 
-    enemy.SetPosition(Vector3(5.0f, 0.0f, 5.0f));
+    enemy.SetPosition(Vector3(5.0f, 0.0f, 10.0f));
 }
 
 void Game::Update(float dt)
@@ -26,7 +26,7 @@ void Game::Update(float dt)
   
     Vector3 playerPosition = player->GetPosition();
     enemy.DetectPlayer(playerPosition);
-
+ 
 
     if (enemy.IsAlive() && enemy.IsPlayerDetected())
     {
@@ -44,6 +44,17 @@ void Game::Update(float dt)
         enemy.SetPosition(enemyPosition);
     }
 
+ 
+
+
+    float distanceToExit =
+        (playerPosition - exitPosition).Magnitude();
+  
+    if (distanceToExit <= escapeRange)
+    {
+        playerEscaped = true;
+        
+    }
     Vector3 enemyPosition = enemy.GetPosition();
     float distanceToEnemy =
         (playerPosition - enemyPosition).Magnitude();
@@ -51,16 +62,8 @@ void Game::Update(float dt)
     if (distanceToEnemy <= captureRange)
     {
         playerCaptured = true;
+
         return;
-    }
-
-
-    float distanceToExit =
-        (playerPosition - exitPosition).Magnitude();
-
-    if (distanceToExit <= escapeRange)
-    {
-        playerEscaped = true;
     }
 }
 
@@ -76,6 +79,7 @@ bool Game::IsEnemyDetectingPlayer() const
 {
     return enemy.IsPlayerDetected();
 }
+
 Vector3 Game::GetEnemyPosition() const
 {
     return enemy.GetPosition();

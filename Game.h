@@ -20,13 +20,12 @@ private:
     CameraSystem cameraSystem;
     bool playerCaptured = false;
     bool playerEscaped = false;
-
-    Vector3 exitPosition{ 20.0f, 0.0f, 20.0f };
+    Vector3 exitPosition{ 10.0f, 0.0f, 10.0f };
 
     float captureRange = 1.5f;
-    float escapeRange = 2.0f;
+    float escapeRange = 4.0f;
     
-    float enemySpeed = 0.5f;
+    float enemySpeed = 0.2f;
 public:
     Game();
 

@@ -11,7 +11,7 @@ private:
 
     Vector3 position{ 0.0f, 0.0f, 0.0f };
 
-    float detectionRange = 10.0f;
+    float detectionRange = 4.0f;
     bool playerDetected = false;
 
 public:
